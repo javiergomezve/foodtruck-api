@@ -26,7 +26,7 @@ export default({config, db}) => {
       });
   });
 
-  api.post('/', (req, res) => {
+  api.post('/', authenticate, (req, res) => {
     const newFoodtruck = new Foodtruck();
     newFoodtruck.name = req.body.name;
     newFoodtruck.foodType = req.body.foodType;
@@ -39,7 +39,7 @@ export default({config, db}) => {
     });
   });
 
-  api.put('/:id', (req, res) => {
+  api.put('/:id', authenticate, (req, res) => {
     Foodtruck.findById(req.params.id)
       .then(foodtruck => {
         foodtruck.name = req.body.name;
@@ -58,7 +58,7 @@ export default({config, db}) => {
       });
   });
 
-  api.delete('/:id', (req, res) => {
+  api.delete('/:id', authenticate, (req, res) => {
     Foodtruck.remove({_id: req.params.id}, (err, foodtruck) => {
       if (err) res.send(err);
 
