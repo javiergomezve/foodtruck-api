@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import Foodtruck from '../model/foodtruck';
 import Review from '../model/review';
+import { authenticate } from "../middleware/auth";
 
 export default({config, db}) => {
   const api = Router();
@@ -65,7 +66,7 @@ export default({config, db}) => {
     });
   });
 
-  api.post('/:id/review', (req, res) => {
+  api.post('/:id/review', authenticate, (req, res) => {
     Foodtruck.findById(req.params.id, (err, foodtruck) => {
       if (err) {
         return res.send(err);
