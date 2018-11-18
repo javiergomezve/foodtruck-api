@@ -2,12 +2,30 @@
   "name": "foodtruck",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "start": "NODE_ENV=production pm2 start dist",
+    "prestart": "npm run -s build",
+    "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
   "keywords": [],
-  "author": "",
+  "author": "Javier Gomez <javiergomezve@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.18.0",
