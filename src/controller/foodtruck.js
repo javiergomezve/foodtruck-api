@@ -59,10 +59,25 @@ export default({config, db}) => {
   });
 
   api.delete('/:id', authenticate, (req, res) => {
-    Foodtruck.remove({_id: req.params.id}, (err, foodtruck) => {
-      if (err) res.send(err);
+    Foodtruck.findById(req.params.id, (err, foodtruck) => {
+      if (err) {
+        res.status(500).send(err);
+        return;
+      }
 
-      res.json({message: 'Foodtruck deleted'});
+      if (foodtruck === null) {
+        res.status(404).json({message: 'Foodtruck do not exist'});
+        return;
+      }
+
+      Foodtruck.remove({_id: req.params.id}, (err, foodtruck) => {
+        if (err) {
+          res.status(500).send(err);
+          return;
+        }
+
+        res.json({message: 'Foodtruck deleted'});
+      });
     });
   });
 
