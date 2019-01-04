@@ -12,7 +12,11 @@ export default ({config, db}) => {
       username: req.body.email,
     }), req.body.password, (err, account) => {
       if (err) {
-        res.send(err);
+        if (err.name === "UserExistsError") {
+          return res.status(409).send(err);
+        } else {
+          return res.status(500).send(err);
+        }
       }
 
       passport.authenticate('local', {
