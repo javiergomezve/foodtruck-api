@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "2dbbb79c-10b1-9ac7-5959-da2af2be0017",
+		"name": "foodtruck",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"ramonflores@gmail.com\",\n\t\"password\": \"ramonflores\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"javiergomezve@gmail.com\",\n\t\"password\":\"javiergomezve\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				},
+				"description": "iniciar sesion"
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGMwNjJkYjE0NDIyMWUyOWQ4OWQyMCIsImlhdCI6MTU0NDI5MTkwMCwiZXhwIjoxNTQ2ODgzOTAwfQ.0QUkA8mvfysUqfiP5OsVXNEBHoIJeQLVceGOU6U0YWc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"me"
+					]
+				},
+				"description": "user information"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYjRkNzcxODU2YzFkMDkxYjMwZTZhYiIsImlhdCI6MTUzODU3ODc1OSwiZXhwIjoxNTQxMTcwNzU5fQ.HB4-LYNzD4aOM7G7AGXV2UWo_i08GpQ1FgmenJCRs7Y"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/account/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"logout"
+					]
+				},
+				"description": "cerrar sesion"
+			},
+			"response": []
+		},
+		{
+			"name": "foodtrucks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYjRkNzcxODU2YzFkMDkxYjMwZTZhYiIsImlhdCI6MTUzODU3ODc1OSwiZXhwIjoxNTQxMTcwNzU5fQ.HB4-LYNzD4aOM7G7AGXV2UWo_i08GpQ1FgmenJCRs7Y"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck"
+					]
+				},
+				"description": "lista de foodtrucks\n"
+			},
+			"response": []
+		},
+		{
+			"name": "foodtrucks add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGMwNjJkYjE0NDIyMWUyOWQ4OWQyMCIsImlhdCI6MTU0NDI5MTkwMCwiZXhwIjoxNTQ2ODgzOTAwfQ.0QUkA8mvfysUqfiP5OsVXNEBHoIJeQLVceGOU6U0YWc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"name\",\n\t\"foodType\":\"foodtype\",\n\t\"avgcost\": 12,\n\t\"geometry\":{\n\t\t\"coordinates\": {\n\t\t\t\"lat\":12,\n\t\t\t\"long\":13\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						""
+					]
+				},
+				"description": "agregar foodtruck\n"
+			},
+			"response": []
+		},
+		{
+			"name": "foodtrucks get one",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYjRkNzcxODU2YzFkMDkxYjMwZTZhYiIsImlhdCI6MTUzODU3ODc1OSwiZXhwIjoxNTQxMTcwNzU5fQ.HB4-LYNzD4aOM7G7AGXV2UWo_i08GpQ1FgmenJCRs7Y"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/5c0c07a7dd27681e589a2c5d",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						"5c0c07a7dd27681e589a2c5d"
+					]
+				},
+				"description": "obtener uno de foodtrucks\n"
+			},
+			"response": []
+		},
+		{
+			"name": "foodtrucks delete one",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYjRkNzcxODU2YzFkMDkxYjMwZTZhYiIsImlhdCI6MTUzODU3ODc1OSwiZXhwIjoxNTQxMTcwNzU5fQ.HB4-LYNzD4aOM7G7AGXV2UWo_i08GpQ1FgmenJCRs7Y"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/5bb4da8a856c1d091b30e6ac",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						"5bb4da8a856c1d091b30e6ac"
+					]
+				},
+				"description": "borrar uno de foodtrucks\n"
+			},
+			"response": []
+		},
+		{
+			"name": "foodtrucks update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGMwNjJkYjE0NDIyMWUyOWQ4OWQyMCIsImlhdCI6MTU0NDI5MTkwMCwiZXhwIjoxNTQ2ODgzOTAwfQ.0QUkA8mvfysUqfiP5OsVXNEBHoIJeQLVceGOU6U0YWc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"name 2\",\n\t\"foodType\":\"foodType 2\",\n\t\"avgcost\": 13,\n\t\"geometry\":{\n\t\t\"coordinates\": {\n\t\t\t\"lat\":1211,\n\t\t\t\"long\":1312\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/5c0c07a7dd27681e589a2c5d",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						"5c0c07a7dd27681e589a2c5d"
+					]
+				},
+				"description": "actualizar foodtruck"
+			},
+			"response": []
+		},
+		{
+			"name": "reviews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYjRkNzcxODU2YzFkMDkxYjMwZTZhYiIsImlhdCI6MTUzODU3ODc1OSwiZXhwIjoxNTQxMTcwNzU5fQ.HB4-LYNzD4aOM7G7AGXV2UWo_i08GpQ1FgmenJCRs7Y"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/5c0c07addd27681e589a2c63/review",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						"5c0c07addd27681e589a2c63",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aadd review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMjJmYzFiMDdkOTE4MTk0ZDZhYjI5OCIsImlhdCI6MTU0NjIwMzc4OCwiZXhwIjoxNTQ4Nzk1Nzg4fQ.VkG4M5uMONufxwyqsasiz7rXUyruSkJMIS8ICPv-Oe8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3005/api/v1/foodtruck/5c0c07a8dd27681e589a2c5f/review",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"v1",
+						"foodtruck",
+						"5c0c07a8dd27681e589a2c5f",
+						"review"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -13,7 +13,6 @@ export default ({config, db}) => {
     }), req.body.password, (err, account) => {
       if (err) {
         if (err.name === "UserExistsError") {
-          console.log("User Exists");
           return res.status(409).send(err);
         } else {
           return res.status(500).send(err);

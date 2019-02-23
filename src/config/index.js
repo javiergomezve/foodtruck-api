@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 export default {
-  "port": 3005,
-  "mongoUrl": "mongodb://localhost:27017/foodtruck",
+  "port": process.env.PORT,
+  "mongoUrl": process.env.MONGO_URL,
   "bodyLimit": "100kb"
 };
